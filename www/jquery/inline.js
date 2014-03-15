@@ -38,6 +38,7 @@ jq("#takeapicBtn").click(function(){
 function onSuccess(imageURI) {
     var image = document.getElementById('myImage');
     image.src = imageURI;
+    console.log(imageURI);
 }
 
 function onFail(message) {
