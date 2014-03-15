@@ -23,14 +23,32 @@ function init(){
 jq("#takeapicBtn").click(function(){
                          //alert("Take a PIc BTN Clicked");
                          
-                         navigator.notification.alert(
+                         /*navigator.notification.alert(
                                                       'Take a Pic BTN Clicked!',  // message
                                                       alertDismissed,         // callback
                                                       'Take a Pic',            // title
                                                       'OK'                  // buttonName
-                                                      );
-
+                                                      );*/
+                         
+                         navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+                                                     destinationType: Camera.DestinationType.FILE_URI
+                                                     });
                          });
+
+function onSuccess(imageData) {
+    var image = document.getElementById('myImage');
+    image.src = "data:image/jpeg;base64," + imageData;
+}
+
+function onFail(message) {
+    //alert('Failed because: ' + message);
+    navigator.notification.alert(
+                                 message,               // message
+                                 alertDismissed,        // callback
+                                 'Ooops!',          // title
+                                 'OK'                   // buttonName
+                                 );
+}
 
 function alertDismissed() {
     // do something
