@@ -35,9 +35,9 @@ jq("#takeapicBtn").click(function(){
                                                      });
                          });
 
-function onSuccess(imageData) {
+function onSuccess(imageURI) {
     var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
+    image.src = imageURI;
 }
 
 function onFail(message) {
