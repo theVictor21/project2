@@ -82,6 +82,7 @@
 	
 	<!--  PLUGIN  -->
 	<gap:plugin name="org.apache.cordova.camera" />
+	<gap:plugin name="org.apache.cordova.dialogs" />
 
     <!--
         Define access to external domains.
